@@ -1,6 +1,7 @@
 package api.poja.app.endpoint.event.model;
 
 import static api.poja.app.endpoint.event.EventStack.EVENT_STACK_1;
+import static api.poja.app.endpoint.event.EventStack.EVENT_STACK_2;
 import static java.lang.Math.random;
 
 import api.poja.app.PojaGenerated;
@@ -40,6 +41,7 @@ public abstract class PojaEvent implements Serializable {
 
   public String getEventSource() {
     if (getEventStack().equals(EVENT_STACK_1)) return "api.poja.app.event1";
-    return "api.poja.app.event2";
+    if (getEventStack().equals(EVENT_STACK_2)) return "api.poja.app.event2";
+    return "api.poja.app.event3";
   }
 }
